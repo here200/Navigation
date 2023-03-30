@@ -6,9 +6,9 @@
 
 ### 技术栈
 
-框架：Vue3、Pinia
+框架：Vue3
 
-库：day.js、loadash
+库：day.js、loadash、Pinia
 
 构建：Vue CLI（基于 Webpack、Yarn）
 
