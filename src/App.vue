@@ -18,6 +18,9 @@ const closeSearchServiceSelection = () => {
   if (homeStore.isSearchServiceOpen) {
     homeStore.isSearchServiceOpen = false
   }
+  if (!mainStore.isShowBookmark) {
+    mainStore.isShowBookmark = true
+  }
 }
 
 // 背景类型

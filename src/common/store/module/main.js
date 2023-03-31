@@ -44,7 +44,7 @@ const useMainStore = defineStore('main', {
       if (localSearch) {
         this.currentBackgroundType = JSON.parse(localSearch)
       } else {
-        this.saveCurrentBackgroundType(backgroundType[1])
+        this.saveCurrentBackgroundType(backgroundType[0])
       }
     }
   }

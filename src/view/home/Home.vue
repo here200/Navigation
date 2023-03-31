@@ -21,6 +21,8 @@ function itemClick($event) {
   
   const url = homeStore.searchService.searchURL + homeStore.inputValue
   window.open(url, '__blank')
+
+  mainStore.isShowBookmark = true
 }
 
 // 鼠标移动事件
@@ -45,7 +47,7 @@ function mouseenterEvent(index) {
     <div class="search-result" v-show="!mainStore.isShowBookmark">
       <ul class="list">
         <template v-for="(item, index) in homeStore.searchList">
-          <li @click="itemClick" 
+          <li @click.stop="itemClick" 
             :class="{active: searchItemIndex === index}"
             @mouseenter="mouseenterEvent(index)">{{ item }}</li>
         </template>

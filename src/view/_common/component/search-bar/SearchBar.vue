@@ -88,11 +88,13 @@ function inputFocus() {
       placeholder="请输入内容"
       autofocus 
       v-model="homeStore.inputValue" 
+      @click.stop=""
       @keyup.escape="escapeEvent"
       @keyup.enter="searchClick"
       @keydown.arrow-up="arrowUpEvent"
       @keydown.arrow-down="arrowDownEvent"
       @input.focus="inputFocus"
+      @focus="inputFocus"
       @input="inputEvent">
     <span class="right" @click="searchClick">
       <img src="@/common/static/img/search/search_icon.png" alt="">
