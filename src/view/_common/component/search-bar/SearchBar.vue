@@ -164,7 +164,6 @@ function inputFocus() {
     line-height: 24px;
     font-size: 14px;
     cursor: pointer;
-    user-select: none;
   
     &:hover {
       border-radius: 12px;

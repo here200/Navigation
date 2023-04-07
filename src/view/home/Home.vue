@@ -79,7 +79,6 @@ function mouseenterEvent(index) {
 
       font-size: 45px;
       text-align: center;
-      user-select: none;
     }
   }
 }

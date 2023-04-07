@@ -48,9 +48,9 @@ const switchBackgroundType = () => {
   <!-- background-cover -->
   <div class="cover" :style="coverStyle"></div>
   <!-- setting -->
-  <div class="setting" @click="switchBackgroundType">
+  <div class="setting">
     <span>{{ currentBackgroundType.name }}</span>
-    <img src="@/common/static/img/setting/setting.png" alt="">
+    <img src="@/common/static/img/setting/setting.png" @click="switchBackgroundType" alt="">
   </div>
   <!-- weather -->
   <weather class="weather"></weather>
@@ -59,6 +59,10 @@ const switchBackgroundType = () => {
 </template>
 
 <style lang="less" scoped>
+
+.app {
+  user-select: none;
+}
 
 .home {
   margin-top: 90px;
