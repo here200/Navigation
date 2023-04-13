@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { searchServiceList } from "@/common/static/data/global_data";
 import { getSuggestion } from "@/common/request";
+import { kyLocalStorage } from "@/common/util/storage";
 
 const useHomeStore = defineStore('home', {
   state: () => ({
@@ -17,12 +18,12 @@ const useHomeStore = defineStore('home', {
     saveSearchService(newSearchService) {
       this.searchService = newSearchService
       // 同时保存到 localStroage
-      localStorage.setItem('searchService', JSON.stringify(this.searchService))
+      kyLocalStorage.setItem('searchService', this.searchService)
     },
     getSearchService() {
-      const localSearch = localStorage.getItem('searchService')
+      const localSearch = kyLocalStorage.getItem('searchService')
       if (localSearch) {
-        this.searchService = JSON.parse(localSearch)
+        this.searchService = localSearch
       } else {
         this.saveSearchService(searchServiceList[0])
       }

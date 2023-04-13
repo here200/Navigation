@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-
 import { backgroundType } from "@/common/static/data/global_data";
+import { kyLocalStorage } from "@/common/util/storage";
 
 const useMainStore = defineStore('main', {
   state: () => ({
@@ -34,15 +34,15 @@ const useMainStore = defineStore('main', {
     saveCurrentBackgroundType(newBackgroundType) {
       this.currentBackgroundType = newBackgroundType
       // 同时保存到 localStroage
-      localStorage.setItem('backgroundType', JSON.stringify(this.currentBackgroundType))
+      kyLocalStorage.setItem('backgroundType', this.currentBackgroundType)
     },
     getCurrentBackgroundType() {
       backgroundType[0].url = require('@/common/static/img/background/wendi.png')
       backgroundType[0].set = 'center/cover no-repeat #777'
 
-      const localSearch = localStorage.getItem('backgroundType')
+      const localSearch = kyLocalStorage.getItem('backgroundType')
       if (localSearch) {
-        this.currentBackgroundType = JSON.parse(localSearch)
+        this.currentBackgroundType = localSearch
       } else {
         this.saveCurrentBackgroundType(backgroundType[0])
       }
