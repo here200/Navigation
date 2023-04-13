@@ -8,7 +8,7 @@
 
 框架：Vue3
 
-库：day.js、loadash、Pinia
+库：day.js、lodash、Pinia
 
 构建：Vue CLI（基于 Webpack、Yarn）
 
