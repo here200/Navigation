@@ -22,7 +22,7 @@ const searchServiceList = [
 ]
 
 const backgroundType = [
-  {name: '默认背景', url: '', set: ''},
+  {name: '默认背景', url: 'https://imgapi.xl0408.top', set: 'center/cover no-repeat'},
   {
     name: "随机动漫壁纸",
     url: "https://api.paugram.com/wallpaper?source=gh",

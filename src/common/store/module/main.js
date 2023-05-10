@@ -37,9 +37,6 @@ const useMainStore = defineStore('main', {
       kyLocalStorage.setItem('backgroundType', this.currentBackgroundType)
     },
     getCurrentBackgroundType() {
-      backgroundType[0].url = require('@/common/static/img/background/wendi.png')
-      backgroundType[0].set = 'center/cover no-repeat #777'
-
       const localSearch = kyLocalStorage.getItem('backgroundType')
       if (localSearch) {
         this.currentBackgroundType = localSearch
